@@ -11,25 +11,38 @@ import SwiftUI
 struct CardService{
     public func GetCardsCount() async -> Int{
         do {
-            guard let cardCount = try await getAllCards()?.count else { return 0 }
-            return cardCount
+            let cards = try await fetchAllCards { fetchedCards in
+                if let cards = fetchedCards {
+                    print("Fetched cards")
+                } else {
+                    print("Failed to fetch cards")
+                }
+            }
+            return cards?.count ?? 0
         } catch {
-            
+            print("Error when fetching cards")
         }
-        return 1
+        return 0
     }
     
-    public func getAllCards() async throws -> [Card]? {
-        let url = URL(string: "https://db.ygoprodeck.com/api/v7/cardinfo.php")!
-        let (data, _) = try await URLSession.shared.data(from: url)
-        //let cards = try JSONDecoder().decode(Cards.self, from: data).data
+    public func fetchAllCards(completion: @escaping ([Card]?) -> Void) async throws -> [Card]? {
+        if let cachedCards = CardCache.shared.getCards() {
+            completion(cachedCards)
+            return cachedCards
+        }
         
-        let decoder = JSONDecoder()
+        let url = URL(string: "https://db.ygoprodeck.com/api/v7/cardinfo.php")!
         do {
+            let (data, _) = try await URLSession.shared.data(from: url)
+            let decoder = JSONDecoder()
             let cardData = try decoder.decode(CardData.self, from: data)
+            
+            CardCache.shared.saveCards(cardData.data)
+            completion(cardData.data)
             return cardData.data
         } catch {
-            print("Failed to decode JSON: \(error)")
+            print("failed to fetch cards")
+            completion(nil)
             return nil
         }
     }

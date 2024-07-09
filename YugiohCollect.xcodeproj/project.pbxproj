@@ -11,6 +11,7 @@
 		72853F212C3D2B99007CA1C6 /* GamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72853F202C3D2B99007CA1C6 /* GamesView.swift */; };
 		72853F232C3D2BB2007CA1C6 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72853F222C3D2BB2007CA1C6 /* CollectionView.swift */; };
 		72853F252C3D2CA1007CA1C6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72853F242C3D2CA1007CA1C6 /* ProfileView.swift */; };
+		72853F2D2C3D917F007CA1C6 /* CardCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72853F2C2C3D917F007CA1C6 /* CardCache.swift */; };
 		728C567B2C1457E50008992F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728C567A2C1457E50008992F /* CardView.swift */; };
 		729209C72C0E277900A782BF /* YugiohCollectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729209C62C0E277900A782BF /* YugiohCollectApp.swift */; };
 		729209C92C0E277900A782BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729209C82C0E277900A782BF /* ContentView.swift */; };
@@ -26,6 +27,7 @@
 		72853F202C3D2B99007CA1C6 /* GamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesView.swift; sourceTree = "<group>"; };
 		72853F222C3D2BB2007CA1C6 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		72853F242C3D2CA1007CA1C6 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		72853F2C2C3D917F007CA1C6 /* CardCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCache.swift; sourceTree = "<group>"; };
 		728C567A2C1457E50008992F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		729209C32C0E277900A782BF /* YugiohCollect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YugiohCollect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		729209C62C0E277900A782BF /* YugiohCollectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YugiohCollectApp.swift; sourceTree = "<group>"; };
@@ -56,6 +58,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		72853F2B2C3D9145007CA1C6 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				72853F2C2C3D917F007CA1C6 /* CardCache.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		729209BA2C0E277900A782BF = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +85,7 @@
 		729209C52C0E277900A782BF /* YugiohCollect */ = {
 			isa = PBXGroup;
 			children = (
+				72853F2B2C3D9145007CA1C6 /* Core */,
 				726341B32C237034006BEBBA /* Components */,
 				729209DA2C0E5EA600A782BF /* Views */,
 				729209D72C0E3E3600A782BF /* Models */,
@@ -198,6 +209,7 @@
 				72853F252C3D2CA1007CA1C6 /* ProfileView.swift in Sources */,
 				729209DC2C0E5EC800A782BF /* CardListComponent.swift in Sources */,
 				72853F212C3D2B99007CA1C6 /* GamesView.swift in Sources */,
+				72853F2D2C3D917F007CA1C6 /* CardCache.swift in Sources */,
 				726341582C19A433006BEBBA /* CardListView.swift in Sources */,
 				729209D62C0E31AC00A782BF /* CardService.swift in Sources */,
 				729209D92C0E3E4D00A782BF /* Card.swift in Sources */,

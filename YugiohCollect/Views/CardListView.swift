@@ -38,9 +38,9 @@ struct CardListView: View {
         
     private func loadCards() async {
         do {
-            if let fetchedCards = try await cardService.getAllCards() {
+            _ = try await cardService.fetchAllCards { fetchedCards in
                 DispatchQueue.main.async {
-                    self.cards = fetchedCards
+                    self.cards = fetchedCards ?? []
                 }
             }
         } catch {
